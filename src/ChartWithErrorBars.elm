@@ -59,6 +59,7 @@ type alias ToolTipStyle =
     , lineSpace : Float
     , hoverBarWidth : Float
     , hoverColor : Color.Color
+    , textStyle : String
     }
 
 
@@ -77,6 +78,7 @@ init =
         , lineSpace = 14
         , hoverBarWidth = 11
         , hoverColor = Color.black
+        , textStyle = "text-anchor: start; font: 11px sans-serif;"
         }
     }
 
@@ -191,7 +193,7 @@ tooltip datum system tstyle =
             String.fromFloat ((String.toFloat y |> Maybe.withDefault 0) + lineSpace)
     in
     Svg.g
-        [ SvgA.style "text-anchor: start; font: 11px sans-serif;" ]
+        [ SvgA.style tstyle.textStyle ]
         [ Svg.text_ [ SvgA.x x, SvgA.y y ] [ Svg.text datum.observer ]
         , Svg.text_ [ SvgA.x x, SvgA.y yWithLineSpace ] [ Svg.text datum.method ]
         , errorBar svg_x svg_y eBarHeight system eBarStyle
