@@ -4,4 +4,4 @@ Parses CSV data (in a rather hamfisted way, throwing away errors for now) using 
 This project exists mostly to share how error bars could be implemented using terezka/line-charts.
 
 For now, check it out here:
-https://ellie-app.com/4MM5YdJX55Wa1
+https://ellie-app.com/4MQTb2cj8xsa1
